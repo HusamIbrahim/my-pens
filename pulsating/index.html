@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #4292d9ff;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <title>Pulsating ❤</title>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="600"
+        height="600"
+        viewbox="0 0 600 600"
+      >
+        <defs>
+          <radialGradient
+            xlink:href="#a"
+            id="b"
+            cx="7.038"
+            cy="64.446"
+            fx="7.038"
+            fy="64.446"
+            r="6.192"
+            gradientTransform="matrix(16.9836 -14.53099 19.28415 22.53904 -978.862 -1096.07)"
+            gradientUnits="userSpaceOnUse"
+          />
+          <linearGradient id="a">
+            <stop offset="0" stop-color="#64cfee" stop-opacity=".541" />
+            <stop offset="1" stop-color="#fff" />
+          </linearGradient>
+        </defs>
+        <filter id="drop-shadow">
+          <feDropShadow dx="3" dy="4" stdDeviation="5" flood-color="#333" />
+        </filter>
+        <filter id="blur">
+          <feGaussianBlur stdDeviation="4" result="BLURRED" />
+          <feColorMatrix
+            in="BLURRED"
+            type="matrix"
+            values="2 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 2 0"
+            result="COLOR_ADJUSTED"
+          />
+          <feMerge>
+            <feMergeNode in="COLOR_ADJUSTED"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+        <path
+          d="M.012 338.5l215.508-1.414c26.323 0 25.912-91.7 42.377-90.199 16.465 1.502 31.444 170.636 47.206 170.637 15.762 0 25.008-93.836 42.477-93.836 17.469 0 18.141 36.143 29.888 36.59 11.746.449 9.968-21.778 27.665-21.778H600.19"
+          fill="none"
+          stroke="#fff"
+          stroke-width="4"
+        />
+        <path
+          id="pulse"
+          filter="url(#blur)"
+          d="M.012 338.5l215.508-1.414c26.323 0 25.912-91.7 42.377-90.199 16.465 1.502 31.444 170.636 47.206 170.637 15.762 0 25.008-93.836 42.477-93.836 17.469 0 18.141 36.143 29.888 36.59 11.746.449 9.968-21.778 27.665-21.778H600.19"
+          fill="none"
+          stroke="#f00"
+          stroke-width="4"
+          stroke-dasharray="40 890"
+          stroke-dashoffset="40"
+        />
+        <g id="heart" filter="url(#drop-shadow)">
+          <path
+            d="M357.167 84.794c-51.143 1.569-101.987 106.121 43.965 169.263 147.873-63.973 93.734-169.926 41.944-169.28-16.365.204-32.497 9.065-41.944 30.016-9.837-21.812-26.917-30.521-43.965-29.999z"
+            fill="#f6f6f6"
+          />
+          <path
+            d="M358.765 118.517a45.55 45.55 0 00-1.598.022c-51.142 1.568-101.987 106.121 43.965 169.263 147.873-63.973 93.733-169.927 41.944-169.281-16.366.204-32.497 9.066-41.944 30.017-9.53-21.13-25.857-29.965-42.367-30.021z"
+            fill="url(#b)"
+            transform="translate(0 -33.744)"
+          />
+        </g>
+      </svg>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.2/gsap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
